@@ -29,3 +29,4 @@ Linked Zakodium project: [https://github.com/lpatiny/id-images](https://github.c
 - Image Segmentor App: allows to segment images using a graphical interface
 - Image segmentation: [https://www.mathworks.com/discovery/image-segmentation.html](https://www.mathworks.com/discovery/image-segmentation.html)
 - Matlab image segmentation tutorial (in the add-on explorer)
+- detect phone screen: [https://ch.mathworks.com/matlabcentral/answers/811295-how-to-detect-smarhtphone-s-screen-in-an-image](https://ch.mathworks.com/matlabcentral/answers/811295-how-to-detect-smarhtphone-s-screen-in-an-image)
