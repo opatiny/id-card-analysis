@@ -14,7 +14,7 @@ Use MatLab and the existing image analysis toolboxes to:
 
 - Not all of them are square! -> AGO
 - Some are black and white -> ALB
-- THings can overlay the picture: text, symbols, etc
+- Things can overlay the picture: text, symbols, etc
 
 ## Existing MatLab toolboxes
 
@@ -28,3 +28,4 @@ Linked Zakodium project: [https://github.com/lpatiny/id-images](https://github.c
 - images rotation: [https://www.mathworks.com/help/vision/ug/find-image-rotation-and-scale-using-automated-feature-matching.htmlimages rotation](https://www.mathworks.com/help/vision/ug/find-image-rotation-and-scale-using-automated-feature-matching.html)
 - Image Segmentor App: allows to segment images using a graphical interface
 - Image segmentation: [https://www.mathworks.com/discovery/image-segmentation.html](https://www.mathworks.com/discovery/image-segmentation.html)
+- Matlab image segmentation tutorial (in the add-on explorer)
