@@ -1,9 +1,24 @@
 # Matlab things used in the project
 
-## Commands for beginning of file
+## Useful general stuff
+
+### Commands for beginning of file
 
 ```m
 clc; close all; clear;
+```
+
+### Preallocation
+
+[https://ch.mathworks.com/help/matlab/matlab_prog/preallocating-arrays.html](https://ch.mathworks.com/help/matlab/matlab_prog/preallocating-arrays.html)
+
+Preallocate matrices to avoid loosing time at execution. Use one of the following functions, the parameters specify the size of the matrix.
+
+```m
+zeros(1,10);
+strings();
+cell();
+table();
 ```
 
 ## `.mlx` files
