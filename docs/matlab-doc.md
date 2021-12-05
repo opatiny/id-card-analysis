@@ -1,5 +1,11 @@
 # Matlab things used in the project
 
+## Commands for beginning of file
+
+```m
+clc; close all; clear;
+```
+
 ## `.mlx` files
 
 They are files that can contain text and scripts at the same time. It is called the "Live editor" and it seems really powerful! In some way it is similar to a `.md` where the code bits are executed on the side.
@@ -12,9 +18,7 @@ Type the following command in the command line.
 edit newFile.mlx
 ```
 
-## Image processing
-
-### Useful functions
+## Useful image processing functions
 
 - `imread()`: read image from file
 - `imshow()`
@@ -31,3 +35,7 @@ edit newFile.mlx
 - OTSU: `otsuthresh()`
 
 ## Recursively load images
+
+[https://ch.mathworks.com/matlabcentral/answers/169691-how-can-i-read-train-all-images-from-subfolders](https://ch.mathworks.com/matlabcentral/answers/169691-how-can-i-read-train-all-images-from-subfolders)
+
+Use the following function of the Computer Vision toolbox: `imageDatastore(folderName, 'recursive)`.

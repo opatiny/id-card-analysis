@@ -19,6 +19,9 @@ Use MatLab and the existing image analysis toolboxes to:
 ## Existing MatLab toolboxes
 
 - Image Processing Toolbox: [https://www.mathworks.com/products/image.html](https://www.mathworks.com/products/image.html)
+  - image anylysis functions
+- Computer vision toolbox
+  - loading a set of images:
 
 ## Useful links
 
