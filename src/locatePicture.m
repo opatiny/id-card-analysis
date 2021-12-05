@@ -13,6 +13,6 @@ function boundingBoxes = locatePicture(id)
     % preallocating memory for speed
     boundingBoxes = cell(1,3);
    for index = 1:3
-       boundingBoxes(index) = stats(i);
+       boundingBoxes(index) = stats.BoundingBox(i);
    end
 end

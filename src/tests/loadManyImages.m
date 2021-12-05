@@ -1,4 +1,4 @@
-%% Loading many images for further treatment
+%% Load many images and display them
 
 clc; close all; clear;
 
@@ -7,5 +7,7 @@ paths = imageDatastore('images/', 'IncludeSubFolders', true)
 
 % load all images in workspace
 images = readall(paths);
+% show only one image
 imshow(images{1})
+% montage of all the images
 montage(images)
