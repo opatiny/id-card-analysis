@@ -29,3 +29,5 @@ edit newFile.mlx
 
 - ISODATA: [https://ch.mathworks.com/help/matlab/matlab_prog/clone-from-git-repository.html](https://ch.mathworks.com/help/matlab/matlab_prog/clone-from-git-repository.html)
 - OTSU: `otsuthresh()`
+
+## Recursively load images
