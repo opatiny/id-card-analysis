@@ -1,11 +1,14 @@
-%% Show the boundary rectanfle of the picture of an ID card
+%% Show the boundary rectangle of the picture of an ID card
 
-function [result, bw] = brPicture(image)
+function [result, largeOnly] = brPicture(image)
     %% create mask
     gray = im2gray(image);
     adj = imadjust(gray);
     bw = imbinarize(adj);
     inverted = ~bw;
+    largeOnly = bwareaopen(inverted, 100)
+    imshow(largeOnly);
+    
 
     %% find regions of interest
     % number of largest area regions to keep
