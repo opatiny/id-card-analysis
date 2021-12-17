@@ -5,7 +5,9 @@
 ### Commands for beginning of file
 
 ```m
-clc; close all; clear;
+clc; % clear console
+close all; % close all open files?
+clear; % clear all variables
 ```
 
 ### Preallocation
@@ -43,6 +45,7 @@ edit newFile.mlx
 - `imadjust()`: adjust contrast
 - `im2bw()`: convert to bw using specified threshold
 - `imcrop()`
+- `insertObjectAnnotation()`: insert an annotation in a fiven image
 
 ## Automatic thresholding
 

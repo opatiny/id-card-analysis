@@ -1,4 +1,4 @@
-# Comments on the Matlab language and IDE
+# Comments on the MatLab language and IDE
 
 ## Language
 
@@ -9,3 +9,4 @@
 - The auto-completion doesn't work really well
 - Installing toolboxes is tedious, and takes too much time to do for every individual toolbox (plus it closes the IDE, so you can't work at the same time...)
 - It's difficult to know in which toolbox a function is
+- There is no vertical selection...
