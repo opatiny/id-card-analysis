@@ -6,7 +6,7 @@
 
 ```m
 clc; % clear console
-close all; % close all open files?
+close all; % close all figures
 clear; % clear all variables
 ```
 
@@ -45,7 +45,9 @@ edit newFile.mlx
 - `imadjust()`: adjust contrast
 - `im2bw()`: convert to bw using specified threshold
 - `imcrop()`
-- `insertObjectAnnotation()`: insert an annotation in a fiven image
+- `insertObjectAnnotation()`: insert an annotation (shape + some text) in a given image
+- `insertShape()`: insert a shape in an image
+- `bwareaopen()`: remove small objects from a mask
 
 ## Automatic thresholding
 
