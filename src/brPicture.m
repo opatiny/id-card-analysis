@@ -2,24 +2,21 @@
 
 function result = brPicture(image)
     %% create mask
-    % image = imread("images\AGO\AGO-AD-02001_D.jpg");
     gray = im2gray(image);
     adj = imadjust(gray);
     bw = imbinarize(adj);
     inverted = ~bw;
 
     %% find regions of interest
+    % number of largest area regions to keep
+    N = 3;
     stats = regionprops(inverted, 'BoundingBox','Area');
-    [maxAreas,i] = maxk([stats.Area], 3);
+    [maxAreas,maxIndexes] = maxk([stats.Area], N);
 
     %% add ROI to image
-   % result = image;
-   imshow(image)
-    for index = 1 : length(i)
-	    rectangle('Position', stats(i(index)).BoundingBox,...
-            'EdgeColor','r', 'LineWidth',3)
-        
-        %insertObjectAnnotation(result,'rectangle',stats.BoundingBox,...
-        %    maxAreas, 'EdgeColor','r', 'LineWidth',3, 'TextColor', 'black')
+   result = image;
+   
+    for i = 1 : length(maxIndexes)
+        result = insertShape(result,'rectangle',stats(maxIndexes(i)).BoundingBox, 'Color','r', 'LineWidth',3);
     end
 end
