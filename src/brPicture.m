@@ -1,6 +1,6 @@
 %% Show the boundary rectanfle of the picture of an ID card
 
-function result = brPicture(image)
+function [result, bw] = brPicture(image)
     %% create mask
     gray = im2gray(image);
     adj = imadjust(gray);
@@ -9,7 +9,7 @@ function result = brPicture(image)
 
     %% find regions of interest
     % number of largest area regions to keep
-    N = 3;
+    N = 1;
     stats = regionprops(inverted, 'BoundingBox','Area');
     [maxAreas,maxIndexes] = maxk([stats.Area], N);
 

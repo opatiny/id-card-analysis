@@ -10,7 +10,11 @@ images = readall(paths);
 % montage(images);
 
 %% Apply locatePicture to all images
+boundaryRectangles = cell(N,1);
+masks = cell(N, 1);
 
-test = imread("images\AGO\AGO-AD-02001_D.jpg");
-image = brPicture(test);
-imshow(image);
+for i = 1:N
+[boundaryRectangles{i}, masks{i}] = brPicture(images{i});
+end
+
+montage([boundaryRectangles, masks]);
