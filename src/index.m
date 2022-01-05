@@ -3,7 +3,8 @@ clc; clear; close all;
 
 %% Load images
 % caution! ' and " don't act the same!
-paths = imageDatastore(["images/AGO", "images/BGR"], 'IncludeSubFolders', true);
+% paths = imageDatastore(["images/AGO", "images/BGR"], 'IncludeSubFolders', true);
+paths = imageDatastore("images", 'IncludeSubFolders', true);
 N = length(paths.Files);
 images = readall(paths);
 
@@ -11,10 +12,10 @@ images = readall(paths);
 
 %% Apply locatePicture to all images
 % preallocation
-boundaryRectangles = cell(N,1);
+pictures = cell(N,1);
 masks = cell(N, 1);
 for i = 1:N
-[boundaryRectangles{i}, masks{i}] = detectPicture(images{i});
+[pictures{i}, masks{i}] = detectPicture(images{i});
 end
 
-montage([boundaryRectangles, masks]);
+montage(pictures);

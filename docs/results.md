@@ -4,7 +4,7 @@
 
 We were able to draw boundary rectangles around the 3 largest interest regions of the scan. Coincidently, one of the boundary rectangles was around the MRZ, but this result was not reproducible on other scans. The picture, however, could be detected relatively reliably. All of this was done in a matlab live script.
 
-**Approach (A1):**
+**Initial approach (v1.0):**
 
 - We make a histogram of the scan and defined a threshold by hand to then binarize the scan.
 - We then compute all regions of interest and select the 3 larger area ones.
@@ -17,7 +17,7 @@ We were able to draw boundary rectangles around the 3 largest interest regions o
 - We managed to load all images recursively using `imageDataStore()`
 - The commands of the live script were placed in a standalone function `detectPicture()`, that is called on the array of images.
 
-Enhancements of approach 1 (A1+):
+Enhancements of the approach (v1.1):
 
 - Threshold value is computed automatically using `otsuthresh()`
 - Small objects of the BW image are removed using `bwareaopen()` -> noise reduction
@@ -35,3 +35,10 @@ Applying `detectPicture()` function to an array of images with `bwareaopen()`, o
 - Managed to automatically detect a face in an image. The approach only works if the image is oriented correctly. If it isn't, it either returns a random feature of the image that looks a bit like a face, or it returns an empty matrix.
 
 ![results/2022.01.05/faceDetect-imageTurned.svg](results/2022.01.05/faceDetect-imageTurned.svg)
+
+Enhancements of the approach (v1.2):
+
+- Added gaussian filtering with `wiener2()`
+- Cleared borders of image with `imclearborder()`
+
+![results/2022.01.05/v1.2-gaussianFilter.png](results/2022.01.05/v1.2-gaussianFilter.png)

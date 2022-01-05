@@ -9,7 +9,8 @@ function [bboxes, mask] = detectPicture(image)
 %   - mask: the mask of the image used to compute the BR
     %% create mask
     gray = im2gray(image);
-    adj = imadjust(gray);
+    filtered = wiener2(gray, [5 5]);
+    adj = imadjust(filtered);
     bw = imbinarize(adj);
     inverted = ~bw;
     clearBorder = imclearborder(inverted, 8);
@@ -28,6 +29,6 @@ function [bboxes, mask] = detectPicture(image)
    bboxes = image;
    
     for i = 1 : N
-        bboxes = insertShape(bboxes,'rectangle',stats(maxIndexes(i)).BoundingBox, 'Color','r', 'LineWidth',3);
+        bboxes = insertShape(bboxes,'rectangle',stats(maxIndexes(i)).BoundingBox, 'Color','r', 'LineWidth',4);
     end
 end
