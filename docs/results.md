@@ -15,7 +15,7 @@ We were able to draw boundary rectangles around the 3 largest interest regions o
 ## 2021.12.17: Apply function to array of images
 
 - We managed to load all images recursively using `imageDataStore()`
-- The commands of the live script were placed in a standalone function `locatePicture()`, that is called on the array of images.
+- The commands of the live script were placed in a standalone function `detectPicture()`, that is called on the array of images.
 
 Enhancements of approach 1 (A1+):
 
@@ -25,5 +25,13 @@ Enhancements of approach 1 (A1+):
 Noise reduction with `bwareaopen()`, objects size = 100.
 ![results/2021.12.17/bwareaopen.svg](results/2021.12.17/bwareaopen.svg)
 
-Applying `locatePicture()` function to an array of images (without `bwareaopen()`!)
-![results/2021.12.17/mozaic.svg](results/2021.12.17/mozaic.svg)
+Applying `detectPicture()` function to an array of images with `bwareaopen()`, objects size = 100.
+![results/2021.12.17/mozaic-with-bwareaopen.svg](results/2021.12.17/mozaic-with-bwareaopen.svg)
+
+**Observation:** The qualtity of the picture detection isn't really enhanced when `bwareaopen()` is used.
+
+## 2022.01.05: Face detection
+
+- Managed to automatically detect a face in an image. The approach only works if the image is oriented correctly. If it isn't, it either returns a random feature of the image that looks a bit like a face, or it returns an empty matrix.
+
+![results/2022.01.05/faceDetect-imageTurned.svg](results/2022.01.05/faceDetect-imageTurned.svg)
