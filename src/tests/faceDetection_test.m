@@ -7,13 +7,15 @@ image = imread(".\images\BGR\BGR-CO-02001_O.jpg");
 % imshow(image)
 
 %% Define face detector
-
+% CascadeObjectDetector detects faces by default??
 faceDetector = vision.CascadeObjectDetector();
 
 %% Locate face
+% step allows to execute the instance of faceDetector with image as a
+% parameter
 faceLocationPossibilities = step(faceDetector, image)
 areas = faceLocationPossibilities(:,3) .* faceLocationPossibilities(:,4);
-% keeping largest rectangle
+% keeping largest area rectangle
 [val,index] = maxk(areas, 1);
 faceLocation = faceLocationPossibilities(index,:);
 
