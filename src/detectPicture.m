@@ -1,6 +1,6 @@
 %% Show the boundary rectangle of the picture of an ID card
 
-function [result, mask] = brPicture(image)
+function [bboxes, mask] = detectPicture(image)
 % brPicture: Draw the boundary rectangle of the picture in an ID card scan.
 % Inputs:
 %   - image: the image to process
@@ -12,21 +12,22 @@ function [result, mask] = brPicture(image)
     adj = imadjust(gray);
     bw = imbinarize(adj);
     inverted = ~bw;
+    clearBorder = imclearborder(inverted, 8);
     % remove small objects areas
-    largeOnly = bwareaopen(inverted, 100);
-    imshow(largeOnly);
+    largeOnly = bwareaopen(clearBorder, 100);
     
     mask = largeOnly;
+    
     %% find regions of interest
     % number of largest area regions to keep
     N = 1;
-    stats = regionprops(inverted, 'BoundingBox','Area');
+    stats = regionprops(mask, 'BoundingBox','Area');
     [maxAreas,maxIndexes] = maxk([stats.Area], N);
 
     %% add ROI to image
-   result = image;
+   bboxes = image;
    
     for i = 1 : N
-        result = insertShape(result,'rectangle',stats(maxIndexes(i)).BoundingBox, 'Color','r', 'LineWidth',3);
+        bboxes = insertShape(bboxes,'rectangle',stats(maxIndexes(i)).BoundingBox, 'Color','r', 'LineWidth',3);
     end
 end
