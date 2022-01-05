@@ -23,6 +23,30 @@ cell();
 table();
 ```
 
+### Documenting a function
+
+This is the standard syntax to use to document a MatLab function (`brPicture()` is the name of the function):
+
+```m
+%BRPICTURE: Draw the boundary rectangle of the picture in an ID card scan.
+% Inputs:
+%   image: the image to process
+% Outputs:
+%   result: the image with the boundary rectangle
+%   mask: the mask of the image used to compute the BR
+```
+
+I decided to use the adapted following syntax, which I find clearer:
+
+```m
+% brPicture: Draw the boundary rectangle of the picture in an ID card scan.
+% Inputs:
+%   - image: the image to process
+% Outputs:
+%   - result: the image with the boundary rectangle
+%   - mask: the mask of the image used to compute the BR
+```
+
 ## `.mlx` files
 
 They are files that can contain text and scripts at the same time. It is called the "Live editor" and it seems really powerful! In some way it is similar to a `.md` where the code bits are executed on the side.
@@ -44,10 +68,12 @@ edit newFile.mlx
 - `imhist()`
 - `imadjust()`: adjust contrast
 - `im2bw()`: convert to bw using specified threshold
-- `imcrop()`
+- `imcrop()`: crop an image
+- `imresize()`: resize an image
 - `insertObjectAnnotation()`: insert an annotation (shape + some text) in a given image
 - `insertShape()`: insert a shape in an image
 - `bwareaopen()`: remove small objects from a mask
+- `
 
 ## Automatic thresholding
 
@@ -59,3 +85,7 @@ edit newFile.mlx
 [https://ch.mathworks.com/matlabcentral/answers/169691-how-can-i-read-train-all-images-from-subfolders](https://ch.mathworks.com/matlabcentral/answers/169691-how-can-i-read-train-all-images-from-subfolders)
 
 Use the following function of the Computer Vision toolbox: `imageDatastore(folderName, 'recursive)`.
+
+## Face detection
+
+It's actually really easy to do. Follow this tutorial: [https://www.youtube.com/watch?v=R0Cm7zKIJI8](https://www.youtube.com/watch?v=R0Cm7zKIJI8)
