@@ -1,4 +1,4 @@
-%% Locate the picture in an ID card
+%% Locate thelargest ROIs in an ID card (not used in the end)
 
 function boundingBoxes = largestBoundingBoxes(image, N)
 % largestBoundingBoxes: finds the N largest area boundary rectangles of
