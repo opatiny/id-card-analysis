@@ -1,7 +1,7 @@
 %% Detect the face in an image
 
 function faceLocation = detectFace(image)
-% detectFace: Detect the face in a picture
+% detectFace: Detect the largest face in a picture
 % Inputs:
 %    - image: the image to process
 % Outputs:
