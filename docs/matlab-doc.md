@@ -73,7 +73,8 @@ edit newFile.mlx
 - `insertObjectAnnotation()`: insert an annotation (shape + some text) in a given image
 - `insertShape()`: insert a shape in an image
 - `bwareaopen()`: remove small objects from a mask
-- `
+- `imclearborder()`: removes regions touching the border of the image
+- `imrotate()`: rotate an image by an angle in degrees
 
 ## Automatic thresholding
 
@@ -89,3 +90,8 @@ Use the following function of the Computer Vision toolbox: `imageDatastore(folde
 ## Face detection
 
 It's actually really easy to do. Follow this tutorial: [https://www.youtube.com/watch?v=R0Cm7zKIJI8](https://www.youtube.com/watch?v=R0Cm7zKIJI8)
+The face detector is an instance of `vision.CascadeObjectDetector()`, which uses the **Viola-Jones algorithm** to detect faces. It returns the boundary square of the face.
+
+**Remark:** This function has an option to use pre-calculated ROIs! -> could be useful
+
+**Observation:** This only seems to work if the face is oriented correctly.
