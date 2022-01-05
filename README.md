@@ -10,6 +10,9 @@ Use MatLab and the existing image analysis toolboxes to:
 
 ## State of the art
 
+- Face detection in Matlab: [https://www.youtube.com/watch?v=R0Cm7zKIJI8](https://www.youtube.com/watch?v=R0Cm7zKIJI8)
+- Detection of picture in ID card using Javascript:
+
 ## Observations based on the given scans
 
 The scans come from the following repository: [https://github.com/lpatiny/id-images](https://github.com/lpatiny/id-images)
