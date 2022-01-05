@@ -10,11 +10,11 @@ images = readall(paths);
 % montage(images);
 
 %% Apply locatePicture to all images
+% preallocation
 boundaryRectangles = cell(N,1);
 masks = cell(N, 1);
-
 for i = 1:N
-[boundaryRectangles{i}, masks{i}] = brPicture(images{i});
+[boundaryRectangles{i}, masks{i}] = detectPicture(images{i});
 end
 
 montage([boundaryRectangles, masks]);
