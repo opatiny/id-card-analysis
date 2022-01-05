@@ -8,20 +8,30 @@ Use MatLab and the existing image analysis toolboxes to:
 - Detect where the Machine Readable Zone (MRZ) is.
 - Detect where the picture is.
 
+## State of the art
+
 ## Observations based on the given scans
+
+The scans come from the following repository: [https://github.com/lpatiny/id-images](https://github.com/lpatiny/id-images)
 
 ### Pictures
 
 - Not all of them are square! -> AGO
 - Some are black and white -> ALB
 - Things can overlay the picture: text, symbols, etc
+- The picture seems to always be on the left part of the card
+
+### MRZ
+
+- The MRZ in in the bottom half of the card.
+- It seems to always contain `<`
 
 ## Existing MatLab toolboxes
 
 - Image Processing Toolbox: [https://www.mathworks.com/products/image.html](https://www.mathworks.com/products/image.html)
-  - image anylysis functions
+  - image analysis functions
 - Computer vision toolbox
-  - loading a set of images:
+  - loading a set of images
 
 ## Useful links
 
