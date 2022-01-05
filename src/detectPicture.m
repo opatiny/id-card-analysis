@@ -22,9 +22,17 @@ function [bboxes, mask] = detectPicture(image)
     %% find regions of interest
     % number of largest area regions to keep
     N = 1;
-    stats = regionprops(mask, 'BoundingBox','Area');
+    stats = regionprops(mask, 'BoundingBox','Area')
     [maxAreas,maxIndexes] = maxk([stats.Area], N);
-
+    
+    rectangle = stats(maxIndexes(1)).BoundingBox;
+    
+    % return if pic width bigger than height
+    if rectangle(3) > rectangle(4)
+         bboxes = [];
+         return;
+    end
+    
     %% add ROI to image
    bboxes = image;
    
