@@ -1,6 +1,13 @@
 %% Locate the picture in an ID card
 
-function boundingBoxes = locatePicture(image)
+function boundingBoxes = largestBoundingBoxes(image, N)
+% largestBoundingBoxes: finds the N largest area boundary rectangles of
+%                      regions of interest
+% Inputs:
+%   - image: the image to process
+%   - N: number of ROIs to return
+% Outputs:
+%    - boundingBoxes: array of rectangles
     gray = im2gray(image);
     hist = imhist(gray);
     adj = imadjust(hist);
@@ -10,10 +17,10 @@ function boundingBoxes = locatePicture(image)
     bw = imbinarize(adj, threshold);
     inverted = ~bw;
     stats = regionprops(inverted, 'BoundingBox','Area');
-    [v,i] = maxk([stats.Area], 3);
+    [v,i] = maxk([stats.Area], N);
     % preallocating memory for speed
-    % boundingBoxes = zeros(1,3);
-    for index =  1 : length(i)
+     boundingBoxes = cell(1,N);
+    for index =  1 : N
         boundingBoxes(index) = stats(i(index)).BoundingBox;
     end
 end
