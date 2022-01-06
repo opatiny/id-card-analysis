@@ -18,11 +18,22 @@ for i = 1:N
     [pictures(i,:), ~] = detectPicture(images{i}, 0);
     images{i} = insertObjectAnnotation(images{i},'rectangle',pictures(i,:), 'Picture', 'LineWidth',4,'TextBoxOpacity', 0.9, 'Color', 'r');
 
-    angle = detectOrientation(images{i});
+    [angle, error, errorMessage] = detectOrientation(images{i});
 
     rotated{i} = imrotate(images{i}, angle);
+    
+    if error
+        message = errorMessage;
+    else
+        message = ['Scan was rotated: ', num2str(angle), '° CC'];
+    end
+    
+    [height, width, ~] = size(rotated{i});
+    position = [width height];
+    
+    rotated{i} = insertText(rotated{i}, position, message, 'FontSize', 18, 'BoxColor',...
+                       'g', 'BoxOpacity', 0.7, 'TextColor', 'black', 'AnchorPoint', 'RightBottom');
 
-    % rotated{i} = insertObjectAnnotation(rotated{i}, 'rectangle',[30 10 50 0 ], angle, 'LineWidth',4,'TextBoxOpacity', 0.9, 'Color', 'g');
 end
 
 figure;
