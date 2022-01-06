@@ -3,6 +3,8 @@
 ## Language
 
 - Loops have no parentheses so it gets quickly difficult to read
+- The scope of the variables is not the current block -> variables are defined globally, which can lead to errors
+- The way functions return variables is really weird
 
 ## IDE
 

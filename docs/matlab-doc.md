@@ -83,16 +83,17 @@ edit newFile.mlx
 ## Useful image processing functions
 
 - `imread()`: read image from file
-- `imshow()`
-- `imshowpair(img1, img2, "montage")`
+- `imshow()`: show an image
+- `imshowpair(img1, img2, "montage")`: show 2 images side by side
 - `im2gray()`: convert to gray
-- `imhist()`
+- `imhist()`: histogram of the image
 - `imadjust()`: adjust contrast
 - `im2bw()`: convert to bw using specified threshold
 - `imcrop()`: crop an image
 - `imresize()`: resize an image
 - `insertObjectAnnotation()`: insert an annotation (shape + some text) in a given image
 - `insertShape()`: insert a shape in an image
+- `insertText()`: insert a text box to an image
 - `bwareaopen()`: remove small objects from a mask
 - `imclearborder()`: removes regions touching the border of the image
 - `imrotate()`: rotate an image by an angle in degrees
