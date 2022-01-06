@@ -6,8 +6,9 @@ function [bbox, mask] = detectPicture(image, oriented)
 %   - image: the image to process
 %   - oriented (boolean): whether the image is oriented correctly
 % Outputs:
-%   - result: the image with the boundary rectangle
+%   - bbox: the boundary rectangle
 %   - mask: the mask of the image used to compute the BR
+
     %% create mask
     gray = im2gray(image);
     filtered = wiener2(gray, [5 5]);

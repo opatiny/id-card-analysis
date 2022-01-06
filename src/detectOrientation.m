@@ -7,6 +7,7 @@ function [angle, error, errorMessage] = detectOrientation(image)
 %    - angle (number): angle by which to rotate counterclockwise
 %    - error (boolean): orientation found: 0, not found: 1
 %    - errorMessage (string): string with error message
+
 error = 0;
 errorMessage = [];
 
