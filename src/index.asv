@@ -1,0 +1,56 @@
+%% ID cards analysis project
+clc; clear; close all;
+
+%% General variables
+anglesArray = [0, 90, 180, 270];
+
+%% Load images
+% caution! ' and " don't act the same!
+% paths = imageDatastore(["images/AGO", "images/BGR"], 'IncludeSubFolders', true);
+paths = imageDatastore("images\main", 'IncludeSubFolders', true);
+N = length(paths.Files);
+images = readall(paths);
+
+
+%% Preallocation
+pictureLocations = zeros(N,4);
+faceLocations = zeros(N,4);
+masks = cell(N, 1);
+rotated = cell(N, 1);
+
+%% Apply functions to all images
+for i = 1:N
+    % artificially rotate scans
+    randomAngle = anglesArray(randperm(4,1));
+    rotated{i} = imrotate(images{i}, randomAngle);
+    
+    % find orientation and orient correctly
+    [angle, error, errorMessage] = detectOrientation(rotated{i});
+
+    images{i} = imrotate(rotated{i}, angle);
+    
+    trueAngle = 360-randomAngle;
+    
+    if error
+        message = errorMessage;
+    else
+        message = ['Scan was rotated: ', num2str(angle), '° CC'];
+    end
+    
+    [height, width, ~] = size(images{i});
+    position = [width height];
+    
+    images{i} = insertText(images{i}, position, message, 'FontSize', 18, 'BoxColor',...
+                       'g', 'BoxOpacity', 0.7, 'TextColor', 'black', 'AnchorPoint', 'RightBottom');
+
+    % find pictures
+    [pictureLocations(i,:), masks{i}] = detectPicture(images{i}, 1);
+    images{i} = insertObjectAnnotation(images{i},'rectangle',pictureLocations(i,:), 'Picture', 'LineWidth',4,'TextBoxOpacity', 0.7, 'Color', 'r','TextColor','white');
+    
+    % find faces
+    faceLocations(i,:) = detectFace(images{i});
+    images{i} = insertObjectAnnotation(images{i},'rectangle',faceLocations(i,:), 'Face', 'LineWidth',4,'TextBoxOpacity', 0.7, 'Color', 'y','TextColor','white');
+
+end
+
+montage(images);

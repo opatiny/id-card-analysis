@@ -85,6 +85,7 @@ edit newFile.mlx
 - `imread()`: read image from file
 - `imshow()`: show an image
 - `imshowpair(img1, img2, "montage")`: show 2 images side by side
+- `montage()`: display array of images -> more doc underneath
 - `im2gray()`: convert to gray
 - `imhist()`: histogram of the image
 - `imadjust()`: adjust contrast
@@ -97,6 +98,14 @@ edit newFile.mlx
 - `bwareaopen()`: remove small objects from a mask
 - `imclearborder()`: removes regions touching the border of the image
 - `imrotate()`: rotate an image by an angle in degrees
+
+### `montage()`
+
+- display only the few first images of array: use option `'Indices`, 1:9`
+- display image and modified image next to another -> transpose matrix
+  `montage([img, modified]')`
+- enhance quality of thumbnails: `'ThumbnailSize', []`
+  This sets thumbnails size to the size of the first image.
 
 ## Automatic thresholding
 
