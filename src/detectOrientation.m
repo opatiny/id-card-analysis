@@ -1,16 +1,21 @@
-function [angle, errorMessage] = detectOrientation(image)
+function [angle, error, errorMessage] = detectOrientation(image)
 % detectOrientation: return the angle by which the image has to be rotated
 %                    to be oriented properly
 % Inputs:
 %    - image: the image to process
 % Outputs:
-%    - angle: angle by which to rotate counterclockwise
+%    - angle (number): angle by which to rotate counterclockwise
+%    - error (boolean): orientation found: 0, not found: 1
+%    - errorMessage (string): string with error message
+error = 0;
+errorMessage = [];
 
 pictureLocation = detectPicture(image, 0);
 
 if isequal(pictureLocation, zeros(4,1))
-    errorMessage = 'Orientation could not be detected.';
     angle = 0;
+    error = 1;
+    errorMessage = 'Orientation could not be detected.';
     return;
 end
 
