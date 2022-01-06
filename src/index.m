@@ -12,10 +12,17 @@ images = readall(paths);
 
 %% Apply locatePicture to all images
 % preallocation
-pictures = cell(N,1);
+pictureLocations = zeros(N,4);
+faceLocations = zeros(N,4);
 masks = cell(N, 1);
 for i = 1:N
-[pictures{i}, masks{i}] = detectPicture(images{i});
+% find pictures
+[pictureLocations(i,:), masks{i}] = detectPicture(images{i});
+images{i} = insertObjectAnnotation(images{i},'rectangle',pictureLocations(i,:), 'Picture', 'LineWidth',4,'TextBoxOpacity', 0.9, 'Color', 'r');
+% find faces
+faceLocations(i,:) = detectFace(images{i});
+images{i} = insertObjectAnnotation(images{i},'rectangle',faceLocations(i,:), 'Face', 'LineWidth',4,'TextBoxOpacity', 0.9, 'Color', 'y');
+
 end
 
-montage(pictures);
+montage(images);

@@ -10,10 +10,12 @@ function faceLocation = detectFace(image)
 % Define face detector
 faceDetector = vision.CascadeObjectDetector();
 
-faceLocationPossibilities = step(faceDetector, image)
+faceLocationPossibilities = step(faceDetector, image);
 areas = faceLocationPossibilities(:,3) .* faceLocationPossibilities(:,4);
 % keeping largest area rectangle
-[val,index] = maxk(areas, 1);
+[~,index] = maxk(areas, 1);
 faceLocation = faceLocationPossibilities(index,:);
+if isequal(size(faceLocation), [0 4])
+    faceLocation = zeros(1,4);
 end
 

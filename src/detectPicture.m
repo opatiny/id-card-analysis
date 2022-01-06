@@ -29,7 +29,7 @@ function [bbox, mask] = detectPicture(image)
     
     % return if pic width bigger than height
     if rectangle(3) > rectangle(4)
-         bbox = [];
+         bbox = zeros(1,4);
          return;
     end
     
