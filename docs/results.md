@@ -32,8 +32,12 @@ Applying `detectPicture()` function to an array of images with `bwareaopen()`, o
 
 ## 2022.01.05: Face detection
 
-- Managed to automatically detect a face in an image. The approach only works if the image is oriented correctly. If it isn't, it either returns a random feature of the image that looks a bit like a face, or it returns an empty matrix.
+Managed to automatically detect a face in an image. The approach only works if the image is oriented correctly. If it isn't, it either returns a random feature of the image that looks a bit like a face, or it returns an empty matrix. The code is in the `detectFace()` function.
 
+Successful face detection
+![results/2022.01.05/faceDetection.png](results/2022.01.05/faceDetection.png)
+
+False positive on turned image
 ![results/2022.01.05/faceDetect-imageTurned.svg](results/2022.01.05/faceDetect-imageTurned.svg)
 
 Enhancements of the approach (v1.2):
@@ -42,3 +46,13 @@ Enhancements of the approach (v1.2):
 - Cleared borders of image with `imclearborder()`
 
 ![results/2022.01.05/v1.2-gaussianFilter.png](results/2022.01.05/v1.2-gaussianFilter.png)
+
+## 2022.01.06: Add annotations
+
+Enhancements (v1.3):
+
+- adding annotations with text labels
+- we manage to show the face for an array of scans
+- don't return found picture location if aspect ratio is wrong (wider than high)
+
+![results/2022.01.06/mozaic-face-picture.png](results/2022.01.06/mozaic-face-picture.png)
