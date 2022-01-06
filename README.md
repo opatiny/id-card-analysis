@@ -1,5 +1,12 @@
 # Detection of the MRZ and pictures in identity cards scans
 
+## Doc table of contents
+
+- [Project results](./docs/results.md)
+- [Viola-Jones Algorithm](./docs/viola-jones.md)
+- [Matlab image processing doc](./docs/matlab-doc.md)
+- [Matlab language and IDE comments](./docd/matlab-critics.md)
+
 ## Objectives
 
 Use MatLab and the existing image analysis toolboxes to:
@@ -11,7 +18,7 @@ Use MatLab and the existing image analysis toolboxes to:
 ## State of the art
 
 - Face detection in Matlab: [https://www.youtube.com/watch?v=R0Cm7zKIJI8](https://www.youtube.com/watch?v=R0Cm7zKIJI8)
-- Detection of picture in ID card using Javascript:
+- Detection of MRZ in ID card using Javascript: already done at Javascript
 
 ## Observations based on the given scans
 
@@ -27,7 +34,7 @@ The scans come from the following repository: [https://github.com/lpatiny/id-ima
 ### MRZ
 
 - The MRZ in in the bottom half of the card.
-- It seems to always contain `<`
+- It seems to always contain `<` characters
 
 ## Existing MatLab toolboxes
 
