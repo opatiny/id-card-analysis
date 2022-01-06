@@ -49,10 +49,17 @@ Enhancements of the approach (v1.2):
 
 ## 2022.01.06: Add annotations
 
+We managed to detect the orientation of a scan, knowing that the picture is always in the left part of the scan, and that the ID card is wider that high.
+
 Enhancements (v1.3):
 
 - adding annotations with text labels
 - we manage to show the face for an array of scans
 - don't return found picture location if aspect ratio is wrong (wider than high)
+- added `oriented` option in `detectPicture()`
 
+Detecting picture and face in array of scans
 ![results/2022.01.06/mozaic-face-picture.png](results/2022.01.06/mozaic-face-picture.png)
+
+Detecting the orientation of a scan
+![results/2022.01.06/detectOrientation.png](results/2022.01.06/detectOrientation.png)
