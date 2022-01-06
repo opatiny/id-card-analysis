@@ -47,6 +47,23 @@ I decided to use the adapted following syntax, which I find clearer:
 %   - mask: the mask of the image used to compute the BR
 ```
 
+### Use only one of functions outputs
+
+If a function returns many outputs, but you only need some of them, you can use the `~` operator to suppress the useless outputs.
+
+```m
+[bbox, ~] = detectPicture(image);
+```
+
+## Return empty matrix
+
+Use empty square brackets.
+
+```m
+returnVariable = [];
+return;
+```
+
 ## `.mlx` files
 
 They are files that can contain text and scripts at the same time. It is called the "Live editor" and it seems really powerful! In some way it is similar to a `.md` where the code bits are executed on the side.
@@ -95,3 +112,7 @@ The face detector is an instance of `vision.CascadeObjectDetector()`, which uses
 **Remark:** This function has an option to use pre-calculated ROIs! -> could be useful
 
 **Observation:** This only seems to work if the face is oriented correctly.
+
+## Detect orientation of text
+
+[https://ch.mathworks.com/matlabcentral/answers/416846-how-to-detect-orientation-of-an-object](https://ch.mathworks.com/matlabcentral/answers/416846-how-to-detect-orientation-of-an-object)
