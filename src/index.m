@@ -34,7 +34,7 @@ for i = 1:N
         trueAngle = 0;
     end
     
-    if error
+    if error == 1
         message = errorMessage;
     else
         message = ['true angle: ', num2str(trueAngle), '°, found angle: ', num2str(angle), '°'];
@@ -47,7 +47,7 @@ for i = 1:N
                        'g', 'BoxOpacity', 0.7, 'TextColor', 'black', 'AnchorPoint', 'RightBottom');
 
     % find pictures
-    [pictureLocations(i,:), masks{i}] = detectPicture(images{i}, 1);
+    [pictureLocations(i,:), masks{i}] = detectPicture(images{i}, 0);
     images{i} = insertObjectAnnotation(images{i},'rectangle',pictureLocations(i,:), ...
         'Picture', 'LineWidth',4,'TextBoxOpacity', 0.7, 'Color', 'r','TextColor','black','FontSize', 18);
     
