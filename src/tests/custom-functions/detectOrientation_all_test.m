@@ -1,11 +1,11 @@
-%% Test detectOrientation()
+%% Test detectOrientation() on all images
 
 clc; clear; close all;
 
-paths = imageDatastore('..\..\images', 'IncludeSubFolders', true)
+paths = imageDatastore('..\..\images\main', 'IncludeSubFolders', true);
 images = readall(paths);
 
-[N, ~] = size(images)
+[N, ~] = size(images);
 
 rotated = cell(N,1);
 anglesArray = [0, 90, 180, 270];
@@ -14,7 +14,7 @@ for i = 1:N
     randomAngle = anglesArray(randperm(4,1));
     images{i} = imrotate(images{i}, randomAngle);
 
-    angle = detectOrientation(images{i})
+    angle = detectOrientation(images{i});
 
     rotated{i} = imrotate(images{i}, angle);
 
