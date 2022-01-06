@@ -4,7 +4,7 @@ clc; clear; close all;
 %% Loading image
 % image = imread("..\images\BGR\BGR-CO-02001_O.jpg");
 % image = imread("..\images\turned\MNE-AS-01001_S.jpg");
-image = imread("..\images\turned\AGO-AD-02001_D.jpg");
+image = imread("..\..\images\turned\AGO-AD-02001_D.jpg");
 % image = imrotate(image, 90);
 
 %% Define face detector
