@@ -17,7 +17,7 @@ faceLocations = zeros(N,4);
 masks = cell(N, 1);
 for i = 1:N
 % find pictures
-[pictureLocations(i,:), masks{i}] = detectPicture(images{i});
+[pictureLocations(i,:), masks{i}] = detectPicture(images{i}, 1);
 images{i} = insertObjectAnnotation(images{i},'rectangle',pictureLocations(i,:), 'Picture', 'LineWidth',4,'TextBoxOpacity', 0.9, 'Color', 'r');
 % find faces
 faceLocations(i,:) = detectFace(images{i});

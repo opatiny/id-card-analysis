@@ -1,7 +1,9 @@
-%% Test bwareaopen(): remove small objects from bw image
+%% Test detectPicture()
 clc; clear; close all;
 
 image = imread("..\..\images\BGR\BGR-CO-02001_O.jpg");
+
+image = im2gray(image);
 
 [bbox, ~] = detectPicture(image);
 
