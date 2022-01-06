@@ -1,9 +1,10 @@
 %% Show the boundary rectangle of the picture of an ID card
 
-function [bbox, mask] = detectPicture(image)
+function [bbox, mask] = detectPicture(image, oriented)
 % brPicture: Draw the boundary rectangle of the picture in an ID card scan.
 % Inputs:
 %   - image: the image to process
+%   - oriented (boolean): whether the image is oriented correctly
 % Outputs:
 %   - result: the image with the boundary rectangle
 %   - mask: the mask of the image used to compute the BR
@@ -27,8 +28,8 @@ function [bbox, mask] = detectPicture(image)
     
     rectangle = stats(maxIndexes(1)).BoundingBox;
     
-    % return if pic width bigger than height
-    if rectangle(3) > rectangle(4)
+    % exit if pic width bigger than height and image oriented
+    if rectangle(3) > rectangle(4) & oriented
          bbox = zeros(1,4);
          return;
     end

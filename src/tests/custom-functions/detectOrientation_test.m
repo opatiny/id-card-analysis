@@ -1,10 +1,26 @@
-%% Test bwareaopen(): remove small objects from bw image
+%% Test detectOrientation()
+
 clc; clear; close all;
 
-image = imread("..\..\images\BGR\BGR-CO-02001_O.jpg");
-image = imrotate(image, 90);
+paths = imageDatastore('..\..\images', 'IncludeSubFolders', true)
+images = readall(paths);
 
-angle = detectOrientation(image);
+[N, ~] = size(images)
 
-rotated = imrotate(image, angle);
-imshowpair(image, rotated);
+rotated = cell(N,1);
+anglesArray = [0, 90, 180, 270];
+
+for i = 1:N
+    randomAngle = anglesArray(randperm(4,1));
+    images{i} = imrotate(images{i}, randomAngle);
+
+    angle = detectOrientation(images{i})
+
+    rotated{i} = imrotate(images{i}, angle);
+
+    % rotated{i} = insertObjectAnnotation(rotated{i}, 'rectangle',[30 10 50 0 ], angle, 'LineWidth',4,'TextBoxOpacity', 0.9, 'Color', 'g');
+end
+
+figure;
+ montage([images, rotated]');
+ title('Original and reoriented images');
