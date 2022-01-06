@@ -12,3 +12,6 @@ Original scans, randomly rotated
 
 Processed scans
 ![results/2022.01.06/final-results/processed-scans.svg](results/2022.01.06/final-results/processed-scans.svg)
+
+Processed scans with false positive detected pictures
+![results/2022.01.06/final-results/processed-scans-withFalsePositives.svg](results/2022.01.06/final-results/processed-scans.svg)
