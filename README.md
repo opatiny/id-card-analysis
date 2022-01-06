@@ -2,7 +2,8 @@
 
 ## Doc table of contents
 
-- [Project results](./docs/results.md)
+- [Final project results](./docs/final-results.md)
+- [Intermediate results](./docs/intermediate-results.md)
 - [Viola-Jones Algorithm](./docs/viola-jones.md)
 - [Matlab image processing doc](./docs/matlab-doc.md)
 - [Matlab language and IDE comments](./docd/matlab-critics.md)

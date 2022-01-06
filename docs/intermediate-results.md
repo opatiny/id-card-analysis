@@ -1,5 +1,7 @@
 # Results obtained during the `id-card-analysis` project
+
 [Back to README](../README.md)
+
 ## 2021.11.26: Boundary rectangles
 
 We were able to draw boundary rectangles around the 3 largest interest regions of the scan. Coincidently, one of the boundary rectangles was around the MRZ, but this result was not reproducible on other scans. The picture, however, could be detected relatively reliably. All of this was done in a matlab live script.
@@ -50,6 +52,7 @@ Enhancements of the approach (v1.2):
 ## 2022.01.06: Add annotations
 
 We managed to detect the orientation of a scan, knowing that the picture is always in the left part of the scan, and that the ID card is wider that high.
+On our datasets, even scans without a picture (back of ID card) have been reoriented correctly (3 scans). This is probably by change, because teh largest ROI happened to be on the left side of the image.
 
 Enhancements (v1.3):
 
@@ -63,3 +66,7 @@ Detecting picture and face in array of scans
 
 Detecting the orientation of a scan
 ![results/2022.01.06/detectOrientation.png](results/2022.01.06/detectOrientation.png)
+
+Orienting correctly the images without a picture
+![results/2022.01.06/reorient-no-pic.png](results/2022.01.06/reorient-no-pic.png)
+
