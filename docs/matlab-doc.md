@@ -55,6 +55,10 @@ If a function returns many outputs, but you only need some of them, you can use 
 [bbox, ~] = detectPicture(image);
 ```
 
+### Print message
+
+Use the `disp()` function.
+
 ## Return empty matrix
 
 Use empty square brackets.
