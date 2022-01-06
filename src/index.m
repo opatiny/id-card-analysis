@@ -11,7 +11,6 @@ paths = imageDatastore("images\main", 'IncludeSubFolders', true);
 N = length(paths.Files);
 images = readall(paths);
 
-
 %% Preallocation
 pictureLocations = zeros(N,4);
 faceLocations = zeros(N,4);
@@ -56,11 +55,13 @@ for i = 1:N
     faceLocations(i,:) = detectFace(images{i});
     images{i} = insertObjectAnnotation(images{i},'rectangle',faceLocations(i,:), 'Face',...
         'LineWidth',4,'TextBoxOpacity', 0.7, 'Color', 'y','TextColor','black','FontSize', 18);
-
 end
+
+% show results
 figure;
 title('Original images');
 montage(rotated, 'Size', [6 5], 'ThumbnailSize', []);
+
 figure;
 title('Re-orienting scans, finding picture and detecting face');
 montage(images, 'ThumbnailSize', []);
