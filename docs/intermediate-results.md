@@ -30,7 +30,7 @@ Noise reduction with `bwareaopen()`, objects size = 100.
 Applying `detectPicture()` function to an array of images with `bwareaopen()`, objects size = 100.
 ![results/2021.12.17/mozaic-with-bwareaopen.svg](results/2021.12.17/mozaic-with-bwareaopen.svg)
 
-**Observation:** The qualtity of the picture detection isn't really enhanced when `bwareaopen()` is used.
+**Observation:** The quality of the picture detection isn't really enhanced when `bwareaopen()` is used.
 
 ## 2022.01.05: Face detection
 
@@ -47,6 +47,7 @@ Enhancements of the approach (v1.2):
 - Added gaussian filtering with `wiener2()`
 - Cleared borders of image with `imclearborder()`
 
+Picture detection after adding a gaussian filter
 ![results/2022.01.05/v1.2-gaussianFilter.png](results/2022.01.05/v1.2-gaussianFilter.png)
 
 ## 2022.01.06: Add annotations
@@ -69,4 +70,3 @@ Detecting the orientation of a scan
 
 Orienting correctly the images without a picture
 ![results/2022.01.06/reorient-no-pic.png](results/2022.01.06/reorient-no-pic.png)
-

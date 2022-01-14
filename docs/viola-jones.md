@@ -36,6 +36,12 @@ The VIola-Jone algorithm is a really quick and simple face detection algorithm d
 
 [Source](https://www.researchgate.net/figure/Viola-Jones-algorithm-parts-a-combination-of-regions-b-Haar-Features-c-cascade_fig1_282972331) -> it's a paper, might be interesting
 
+## Quote from the original article
+
+Link to the article: [https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf](https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf)
+
+"The complete face detection cascade has 38 stages with over 6000 features. Nevertheless the cascade structure results in fast average detection times. On a difficult dataset, containing 507 faces and 75 million sub-windows, faces are detected using an average of 10 feature evaluations per subwindow."
+
 ## Another topic: face identification
 
 Face identification is the ability to say that there is a specific person in a picture.
