@@ -15,3 +15,5 @@ Processed scans
 
 Processed scans with false positive detected pictures
 ![results/2022.01.06/final-results/processed-scans-withFalsePositives.svg](results/2022.01.06/final-results/processed-scans.svg)
+
+Critic from the teacher: why not use `bwareaopen()` with a larger kernel to remove all smaller objects??
